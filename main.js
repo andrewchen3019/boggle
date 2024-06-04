@@ -4,26 +4,6 @@ const result = document.getElementById("result-title")
 const loading = document.getElementById("loading")
 const main = document.getElementById("main")
 const resolt = document.querySelector(".resolt");
-// async function getDictionary(word) {
-//     loading.style.display = "block"
-//     result.style.display = "none"
-//     try{
-//         const response = await fetch(`https://cors-anywhere.herokuapp.com/https://www.wordgamedictionary.com/api/v1/references/scrabble/${word}?key=7.304453775081076e29`)
-//         var parser = new DOMParser();
-//         var xmlDoc = parser.parseFromString(await response.text(),"text/xml");
-//         var output = xmlDoc.getElementsByTagName("scrabble")[0].textContent
-//         result.style.display = "block"
-//         loading.style.display = "none"
-//         result.innerHTML = `"${word}" is ${output == 1? "a valid":"not a valid"} word`
-//     }catch(err){
-//         result.style.display = "block"
-//         loading.style.display = "none"
-//         result.innerHTML = "Request error"
-//         result.classList.add('error');
-//     }
-    
-
-// }
 const bored = document.querySelector('.board');
 
 var letters = [
@@ -109,52 +89,6 @@ formy.addEventListener('submit', function(e) {
 
 });
 
-// function recursion(newSquare, currentWord, words, firstTime) {
-//     if (newSquare.x == 0 && newSquare.y == 1 ) {
-//         console.log(currentWord);
-//     }
-//     let word = "";
-//     for (let i = 0; i < currentWord.length; i++) {
-//         const object = currentWord[i];
-//         word += object.letter;
-//     }
-//     if(newSquare.x > 3  || newSquare.x < 0 || newSquare.y > 3  || newSquare.y < 0 ) {
-//         if (!words.includes(word)) words.push(word);
-//         return words
-//     }
-//     else{
-//         for (let i = 0; i < currentWord.length; i++) {
-//             const object = currentWord[i];
-//             if(object.x == newSquare.x && object.y == newSquare.y) return words
-//         }
-//         word += board[newSquare.x][newSquare.y]
-//         currentWord.push({
-//             letter: board[newSquare.x][newSquare.y],
-//             x: newSquare.x,
-//             y: newSquare.y
-//         })
-//         if (!words.includes(word)) words.push(word);
-
-  
-//         let butt = [...currentWord];
-//         words = recursion({x: newSquare.x+1, y: newSquare.y}, butt, words, false)
-//         words = recursion({x: newSquare.x+1, y: newSquare.y+1}, butt, words, false)
-//         words = recursion({x: newSquare.x+1, y: newSquare.y-1}, butt, words, false)
-
-//         words = recursion({x: newSquare.x-1, y: newSquare.y}, butt, words, false)
-
-//         words = recursion({x: newSquare.x-1, y: newSquare.y+1}, butt, words, false)
-
-//         words = recursion({x: newSquare.x-1, y: newSquare.y-1}, butt, words, false) 
-        
-//         words = recursion({x: newSquare.x, y: newSquare.y+1}, butt, words, false)
-
-//         words = recursion({x: newSquare.x, y: newSquare.y-1}, butt, words, false)
-//         return words
-//     }
-// }
-// console.log(recursion({x: 0, y: 0}, [], [], true))
-
 var words = {
     data: []
 }
@@ -186,11 +120,10 @@ for (let i = 0; i < 4; i++) {
             ],
             i,j, "", true
         )
-        console.log("-------------------")
     }
     
 }
 console.log(words.data)
-const butts = words.data.filter((word) => window.dictionary.includes(word.toUpperCase()));
-butts.forEach(word => resolt.innerHTML += `<li class="result-item">${word}</li>`)
+const results = words.data.filter((word) => window.dictionary.includes(word.toUpperCase()));
+results.forEach(word => resolt.innerHTML += `<li class="result-item">${word}</li>`)
 
