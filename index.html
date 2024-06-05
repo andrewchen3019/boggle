@@ -6,23 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="spinner.css">
-    <title>Big Boggle</title>
+    <title>Boggle</title>
+  <script src="dictionary.js"></script>
 </head>
 <body>
     <div id="loading"><div class="preloader"><div class="loading-dot"></div></div></div>
     <div id="main">
-        <h1>Big Boggle</h1>
+        <div class="clock">3:00</div>
+        <h1>Boggle</h1>
         <div class="board"></div>
         <div class="formstuff">
-            <h3>WORD CHECKER</h3>
             <form action="" id="formy">
+                         <h3>Enter Words: </h3>
                 <input type="text" id="texty" placeholder="Enter a word...">
                 <input type="submit" value="SUBMIT NOW">
             </form>
             <div class="results">
-                <h3 id="result-title">POOPYFACE</h3>
+                <div class="message"></div>
             </div>
+            <div class="points-value"></div>
         </div>
+        
         <div class="result">
             <h3>Playable Words:</h3>
             <ul class="resolt">
@@ -31,6 +35,6 @@
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

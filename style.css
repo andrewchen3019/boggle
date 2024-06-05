@@ -8,7 +8,9 @@ body {
 }
 #main {
     text-align: center;
-    display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -55,22 +57,74 @@ body {
 #loading {
     display: none;
 }
-
-#result-title{
-    display: none;
+.good-word {
+  color: red;
 }
-
 .error {
     color: red;
 }
 
 .result {
+    display: none;
     background-color: gold;
     padding: 5px;
     border-radius: 15px;
 }
-
+.result h1 {
+    font-size: 2rem;
+}
 .resolt {
     list-style: none;
     columns: 6;
+}
+
+.clock {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: dodgerblue;
+  padding: 1em;
+  margin: 1em;
+  color: white;
+  border-radius: 1em;
+}
+
+@media(max-width: 400px){
+    .board .grid {
+        height: 23.75vw;
+        width: 23.75vw;
+        font-size: 10vw;
+    }
+
+    .board {
+        height: 95vw;
+        width: 95vw;
+    }
+}
+
+@media (max-width: 600px){
+    .resolt {
+        columns: 5;
+    }
+}
+@media (max-width: 440px) {
+    .resot {
+        columns: 4;
+    }
+}
+@media (max-width: 280px) {
+    .resot {
+        columns: 3;
+    }
+}
+
+@media (max-width: 110px) {
+    .resot {
+        columns: 2;
+    }
+}
+@media (max-width: 70px) {
+    .resot {
+        columns: 1;
+    }
 }
