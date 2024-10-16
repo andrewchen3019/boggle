@@ -1,0 +1,1 @@
+Boggle is a word game in which players try to find as many words as they can from a grid of lettered dice, within a set time limit. The time limit is set at three minutes. It utilizes the 2019 Collins Scrabble Dictionary.  
